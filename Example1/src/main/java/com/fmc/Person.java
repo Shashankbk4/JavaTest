@@ -21,11 +21,17 @@ public String getName() {
 public void setName(String name) {
 	this.name = name;
 }
-   public void start() {
+   public void start(boolean status) {
+	   System.out.println(status);
+	   if(status==true) {
 	   System.out.println("vehicle owner is -> "+name);
 	   System.out.println("vehicle name is -> "+ vehicle.getvName());
 	   System.out.println("vehicle started");
 	  vehicle.getVehicleService().move();
 	  vehicle.getVehicleService().sound();
+	   }
+	   else {
+		   System.out.println("vehicle not started");
+	   }
    }
 }

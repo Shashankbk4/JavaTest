@@ -10,7 +10,8 @@ public class Test {
 public static void main(String[] args) {
 	ApplicationContext context=new AnnotationConfigApplicationContext(ProjectConfig.class);
 Person person=context.getBean(Person.class);
-     person.start();
+  boolean vehicleStatus=false;
+     person.start(vehicleStatus);
  
 }
 }
