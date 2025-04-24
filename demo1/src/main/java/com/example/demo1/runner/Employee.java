@@ -1,5 +1,8 @@
 package com.example.demo1.runner;
 
+import java.util.List;
+import java.util.Set;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -12,7 +15,7 @@ public class Employee implements CommandLineRunner{
 	 private String name;
      @Value("${my.info.emp.salary}")
 	 private double salary;
-     
+   
      
  	public Employee() {
 		super();
@@ -53,6 +56,7 @@ public class Employee implements CommandLineRunner{
 	@Override
 	public void run(String... args) throws Exception {
 		//System.out.println(this.toString());//
+		System.out.println("Last =============== run method is running");
 		System.out.println(this);
 		
 	}

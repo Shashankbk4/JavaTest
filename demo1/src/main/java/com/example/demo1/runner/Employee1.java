@@ -16,6 +16,7 @@ public class Employee1 implements CommandLineRunner {
 		System.out.println(env.getProperty("my.info.emp.id"));
 		System.out.println(env.getProperty("my.info.emp.name"));
 		System.out.println(env.getProperty("my.info.emp.salary"));
+
 		System.out.println("=============================================");
 		System.out.println("end");
 	}

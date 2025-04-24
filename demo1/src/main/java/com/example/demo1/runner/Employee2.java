@@ -1,5 +1,7 @@
 package com.example.demo1.runner;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -17,7 +19,7 @@ public class Employee2 implements CommandLineRunner {
     
 	 private double salary;
     
-    
+	
 	public Employee2() {
 		super();
 		// TODO Auto-generated constructor stub
