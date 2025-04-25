@@ -105,13 +105,25 @@ public class BaseOperations implements CommandLineRunner {
 
 	List<String> emp13=empRepo.getAllProducts(30000.00);
 	emp13.forEach(em -> System.out.println("names of all employees --->"+  em));
-	
+	System.out.println("=========================");
 
-	//List<Objects[]> emp14=empRepo.getAllProducts();
-	//emp14.forEach(em -> System.out.println(em[0]+ "============="+em[1]));
-	
+	List<Object[]> emp14=empRepo.getAllProducts();
+	emp14.forEach(em -> System.out.println(em[0]+ "============="+em[1]));
+	System.out.println("===========================");
 	//empRepo.updateEmployeeNameById("shreyas", 5);
 	int data=empRepo.updateEmployeeNameById("shreyas", 5);
 	System.out.println("updated dat is ---> "+data);
+	
+	List<Employee> emp15=empRepo.findBySalaryGreaterThan(90000.00);
+	emp15.forEach(em -> System.out.println(em.getName()));
+	
+	List<Employee> emp16=empRepo.findByNameOrSalaryAndName("rahul", 60000.00, "virat");
+	emp16.forEach(em -> System.out.println("===========>"+em.getName()));
+	
+	List<Employee> emp17=empRepo.findBySalaryGreaterThanAndNameNotIn( 30000.00, Arrays.asList("virat","rahul"));
+	emp17.forEach(em -> System.out.println("===========>"+em.getName()));
+	
+	List<Employee> emp18=empRepo.findBySalaryGreaterThanOrderByNameAsc(30000.00);
+	emp18.forEach(em -> System.out.println(em.getName()));
 	}
 }

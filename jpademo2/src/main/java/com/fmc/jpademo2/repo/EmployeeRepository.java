@@ -44,13 +44,21 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	@Query("select e.name from Employee e where e.salary>:a")
 	List<String> getAllProducts(@Param("a") Double eSalary);
 	
-	//@Query("select e.name , e.salary from Employee e")
-	//List<Objects[]> getAllProducts();
+	@Query("select e.name , e.salary from Employee e")
+	List<Object[]> getAllProducts();
     @Modifying
 	@Transactional
 	@Query("update Employee e  set e.name=:a where e.id=:b")
     //void updateEmployeeNameById(@Param("a") String ename,@Param("b") long id);
     int updateEmployeeNameById(@Param("a") String ename,@Param("b") long id);
-	 
+    
+    List<Employee> findBySalaryGreaterThan(Double sal);
+    
+    List<Employee> findByNameOrSalaryAndName(String name,Double sal,String n);
+    
+    List<Employee> findBySalaryGreaterThanAndNameNotIn(Double sal,List<String> name);
+    
+    List<Employee> findBySalaryGreaterThanOrderByNameAsc(Double sal);
+
 
 }
